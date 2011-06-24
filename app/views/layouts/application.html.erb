@@ -7,8 +7,20 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+    
+    <div id="flashes">
+      <%- flash.each do |key, msg| -%>
+        <div  class="flash" id="<%= key %>">
+          <p><%= msg %></p>
+        </div>
+      <%- end -%>
+    </div> <!-- #flashes -->
 
-<%= yield %>
+    <% if @user %>
+      <a href="<%= url_for :controller => :login, :action => :logout %>">logout</a>
+    <% end %>
+
+  <%= yield %>
 
 </body>
 </html>

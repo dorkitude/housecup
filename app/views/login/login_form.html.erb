@@ -1,2 +1,7 @@
-<h1>Login#login_form</h1>
-<p>Find me in app/views/login/login_form.html.erb</p>
+<form method="post" action="<%= url_for(:controller => :login, :action => :login_submit) %>">
+  <input type="text" name="username" />
+  <br />
+  <input type="text" name="password" />
+  <br />
+  <input type="submit" />
+</form>
