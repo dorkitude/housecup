@@ -1,4 +1,8 @@
 Housecup::Application.routes.draw do
+  get "professor/new_delta_form"
+
+  get "professor/new_delta_post"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
