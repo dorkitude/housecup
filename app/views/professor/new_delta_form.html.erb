@@ -1,2 +1,36 @@
-<h1>Professor#new_delta_form</h1>
-<p>Find me in app/views/professor/new_delta_form.html.erb</p>
+<h1>Add a merit or demerit</h1>
+
+
+<form method="post" action="<%= url_for :action => :new_delta_post %>">
+
+
+  <input type="radio" name="direction" id="plus" />
+  <label for="plus">PLUS</label>
+  
+  <input type="radio" name="direction" id="minus" />
+  <label for="minus">MINUS</label>
+
+
+  <br />
+
+  <input type="text" size="5" name="points"/> POINTS TO
+
+  <br />
+
+
+  <select name="house">
+    <option value="" selected="selected"> </option>
+  <% for house in @houses %>
+    <option value="<%= house %>"><%= house.capitalize %></option>
+  <% end %>
+  </select> 
+
+  <br />
+
+  <input type="text" name="why" />
+  
+
+  <input type="submit" />
+
+
+</form>
