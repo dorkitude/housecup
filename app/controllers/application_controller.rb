@@ -2,10 +2,9 @@ class ApplicationController < ActionController::Base
   # commenting out because i don't think we want this, since not all forms are generated -KW
   # protect_from_forgery
   
-  
-
   # this will give views access to the action and controller name
   before_filter :instantiate_controller_and_action_names
+
   def instantiate_controller_and_action_names
     @current_action = action_name
     @current_controller = controller_name
@@ -21,7 +20,6 @@ class ApplicationController < ActionController::Base
       @user = nil
     end
   end
-
 
   # this filter is to be used by specific controllers
   def login_required
