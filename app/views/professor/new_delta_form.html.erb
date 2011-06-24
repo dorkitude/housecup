@@ -4,20 +4,19 @@
 <form method="post" action="<%= url_for :action => :new_delta_post %>">
 
 
-  <input type="radio" name="direction" id="plus" checked="checked" />
-  <label for="plus">PLUS</label>
+  <input id="plus_radio" type="radio" value="plus" name="direction" checked="checked" />
+  <label for="plus_radio">PLUS</label>
   
-  <input type="radio" name="direction" id="minus" />
-  <label for="minus">MINUS</label>
+  <input id="minus_radio" type="radio" value="minus" name="direction" />
+  <label for="minus_radio">MINUS</label>
 
 
   <br />
 
   <input type="text" size="5" name="points"/>
   POINTS
-  <span id="to_or_from">
-  TO
-  </span>
+
+  <span id="to_or_from">fuck </span>
 
   <br />
 
@@ -30,16 +29,41 @@
 
   <br />
 
-  <input type="text" name="why" />
+  BECAUSE
 
   <br />
 
-  BECAUSE
+  <input type="text" name="why" />
 
   <br />
   
 
   <input type="submit" />
 
-
 </form>
+
+
+
+
+<script>
+  function changeToOrFromText() {
+    if($('plus_radio').checked) {
+      $('to_or_from').set('text', 'TO');
+    }
+    else {
+      $('to_or_from').set('text', 'FROM');
+    }
+  }
+
+  window.addEvent('load', function() {
+    changeToOrFromText();
+
+    $('minus_radio').addEvent('change', function() {
+      changeToOrFromText();
+    });
+
+    $('plus_radio').addEvent('change', function() {
+      changeToOrFromText();
+    });
+  });
+</script>
