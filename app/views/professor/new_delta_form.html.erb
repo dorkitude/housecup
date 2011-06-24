@@ -4,7 +4,7 @@
 <form method="post" action="<%= url_for :action => :new_delta_post %>">
 
 
-  <input type="radio" name="direction" id="plus" />
+  <input type="radio" name="direction" id="plus" checked="checked" />
   <label for="plus">PLUS</label>
   
   <input type="radio" name="direction" id="minus" />
@@ -13,10 +13,13 @@
 
   <br />
 
-  <input type="text" size="5" name="points"/> POINTS TO
+  <input type="text" size="5" name="points"/>
+  POINTS
+  <span id="to_or_from">
+  TO
+  </span>
 
   <br />
-
 
   <select name="house">
     <option value="" selected="selected"> </option>
@@ -28,6 +31,12 @@
   <br />
 
   <input type="text" name="why" />
+
+  <br />
+
+  BECAUSE
+
+  <br />
   
 
   <input type="submit" />
