@@ -21,7 +21,7 @@
   <select name="house">
     <option value="" selected="selected"> </option>
   <% for house in @houses %>
-    <option value="<%= house %>"><%= house.capitalize %></option>
+    <option value="<%= house.name %>"><%= house.name.capitalize %></option>
   <% end %>
   </select> 
 
