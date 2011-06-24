@@ -1,4 +1,6 @@
 class ProfessorController < ApplicationController
+  before_filter :login_required 
+
   def new_delta_form
   end
 

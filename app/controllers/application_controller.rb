@@ -23,6 +23,16 @@ class ApplicationController < ActionController::Base
   end
 
 
+  # this filter is to be used by specific controllers
+  def login_required
+    if session[:user_id]
+      return true
+    end
+
+    flash[:error] = "gtfo haxer."
+    return redirect_to :controller => :login, :action => :login_form
+  end
+
   
   
 end
