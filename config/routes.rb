@@ -3,7 +3,7 @@ Housecup::Application.routes.draw do
   get "login/" => "login#login_form"
   get "login/login_form"
 
-  get "login/login_submit"
+  post "login/login_submit"
   post "login/logout_submit"
 
   get "student/index"
