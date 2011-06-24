@@ -1,13 +1,18 @@
 Housecup::Application.routes.draw do
+
+  get "login/" => "login#login_form"
   get "login/login_form"
 
   get "login/login_submit"
+  post "login/logout_submit"
 
   get "student/index"
+  get "/" => "student#index"
 
   get "professor/new_delta_form"
+  get "professor/" => "professor#new_delta_form"
 
-  get "professor/new_delta_post"
+  post "professor/new_delta_post"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
