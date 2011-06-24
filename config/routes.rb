@@ -1,4 +1,8 @@
 Housecup::Application.routes.draw do
+  get "login/login_form"
+
+  get "login/login_submit"
+
   get "student/index"
 
   get "professor/new_delta_form"
