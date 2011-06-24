@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
       return true
     end
 
-    flash[:error] = "gtfo haxer."
+    flash[:error] = "gotta login first mang."
     return redirect_to :controller => :login, :action => :login_form
   end
 
