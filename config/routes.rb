@@ -7,6 +7,7 @@ Housecup::Application.routes.draw do
   get "login/logout"
 
   get "student/index"
+  get "student/stream"
   get "/" => "student#index"
 
   get "professor/new_delta_form"

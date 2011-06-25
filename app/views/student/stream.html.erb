@@ -1,0 +1,29 @@
+<div class="stream">
+<% for delta in @deltas %>
+
+
+  <div class="stream_item">
+
+    <span class="points"><span class="num_points"><%= delta.quantity.abs %></span> points</span> were
+
+    <% if delta.quantity > 0 %>
+      given to
+    <% else %>
+      taken from
+    <% end %>
+
+    <span class="house_name <%= delta.house.name.downcase %>"><%= delta.house.name %></span>
+
+    because 
+
+    <span class="why"><%= delta.why %></span>
+
+    (<%= time_ago_in_words delta.created_at %> ago)
+  </div>
+
+<% end %>
+</div>
+
+
+
+<%= will_paginate @deltas %>
