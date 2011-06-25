@@ -7,13 +7,13 @@ class LoginController < ApplicationController
     expected_password = ENV['admin_password'] || 'test'
 
     if params[:username] != expected_username
-      flash[:error] = 'wrong username, fucko'
+      flash[:error] = "<img src='/images/dementors.png' /> We don't recognize you, \"Professor\".  Perhaps you're the new Professor of the Dark Arts?".html_safe
       session[:user_id] = nil
       return redirect_to :action => :login_form
     end
 
     if params[:password] != expected_password
-      flash[:error] = 'wrong password, fucko'
+      flash[:error] = "<img src='/images/dementors.png' /> You must say the magic word, professor.  Eat some chocolate and try again.".html_safe
       session[:user_id] = nil
       return redirect_to :action => :login_form
     end
