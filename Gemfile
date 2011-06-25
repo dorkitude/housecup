@@ -11,6 +11,8 @@ gem 'mysql2'
 
 gem 'taps'
 
+gem 'will_paginate'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
