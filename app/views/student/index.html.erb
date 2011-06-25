@@ -1,2 +1,15 @@
-<h1>Student#index</h1>
-<p>Find me in app/views/student/index.html.erb</p>
+<h1>FOURTHSTRAVAGANZA HOUSE CUP STANDINGS</h1>
+
+
+
+<div id="houses">
+
+  <% for house in @houses %>
+    <div class="house">
+      <img src="/images/<%= house.name.downcase %>.jpg" />
+      <h2><%= house.score %></h2>
+    </div>
+  <% end %> 
+
+
+</div>
