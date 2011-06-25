@@ -37,8 +37,8 @@ class ProfessorController < ApplicationController
     end
 
     # handle the case where he forgot to select a house
-    if not flash[:error] and params[:house].to_int == 0
-      flash[:error]
+    if not flash[:error] and params[:house].to_i == 0
+      flash[:error] = "<img src='/images/hat.png' /> House selection is not optional. Choose wisely.".html_safe
     end
 
     if flash[:error]
