@@ -24,11 +24,16 @@
       <%- end -%>
     </div> <!-- #flashes -->
 
-    <% if @user %>
-      <a href="<%= url_for :controller => :login, :action => :logout %>">logout</a>
-    <% end %>
 
   <%= yield %>
 
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <% if @user %>
+    <a href="<%= url_for :controller => :login, :action => :logout %>">logout</a>
+  <% end %>
 </body>
 </html>
