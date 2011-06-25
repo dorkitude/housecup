@@ -4,26 +4,42 @@
 <form method="post" action="<%= url_for :action => :new_delta_post %>">
 
 
-  <input id="plus_radio" type="radio" value="plus" name="direction" checked="checked" />
+  <input id="plus_radio" type="radio" value="plus" name="direction"
+    <% if @my_params[:direction] == "plus" %>
+      checked="checked"
+    <% end %>
+  />
   <label for="plus_radio">PLUS</label>
   
-  <input id="minus_radio" type="radio" value="minus" name="direction" />
+  <input id="minus_radio" type="radio" value="minus" name="direction"
+    <% if @my_params[:direction] == "minus" %>
+      checked="checked"
+    <% end %>
+  />
   <label for="minus_radio">MINUS</label>
 
 
   <br />
 
-  <input type="text" size="5" name="points"/>
+  <input type="text" size="5" name="points" value="<%= @my_params[:points] %>"/>
   POINTS
 
-  <span id="to_or_from">fuck </span>
+  <span id="to_or_from">[[[fucking broken javascript bullshit]]]</span>
 
   <br />
 
   <select name="house">
-    <option value="" selected="selected"> </option>
+    <option value="0" 
+    <% if @my_params[:house].to_i == 0 %>
+      selected="selected"
+    <% end %>
+    > </option>
   <% for house in @houses %>
-    <option value="<%= house.name %>"><%= house.name.capitalize %></option>
+    <option value="<%= house.id %>"
+      <% if @my_params[:house].to_i == house.id %>
+        selected="selected"
+      <% end %>
+    ><%= house.name.capitalize %></option>
   <% end %>
   </select> 
 
@@ -33,7 +49,7 @@
 
   <br />
 
-  <input type="text" name="why" />
+  <input type="text" name="why" value="<%= @my_params[:why] %>" />
 
   <br />
   

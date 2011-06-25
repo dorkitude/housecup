@@ -4,13 +4,12 @@ class ProfessorController < ApplicationController
   def new_delta_form
     @houses =House.all
 
-    if not @my_params
-      @my_params = {  :direction => :plus,
-                      :points => '',
-                      :house => nil,
-                      :why => '',
-      }
-    end
+    @my_params = {  
+      :direction => params[:direction] || 'plus',
+      :points => params[:points] ||  '',
+      :house => params[:house] || 0,
+      :why => params[:why] || '',
+    }
 
   end
 
@@ -42,8 +41,7 @@ class ProfessorController < ApplicationController
     end
 
     if flash[:error]
-      @my_params = params
-      return redirect_to :action => :new_delta_form
+      return redirect_to params.merge! :action => :new_delta_form
     end
 
     if type == 'demerit'
