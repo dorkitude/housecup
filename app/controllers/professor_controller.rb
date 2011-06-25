@@ -49,12 +49,15 @@ class ProfessorController < ApplicationController
     end
 
 
+    house = House.find(params[:house])
+    house.score = house.score.to_i + quantity
+    house.save
 
     d = Delta.new
-
     d.why = params[:why]
     d.quantity = quantity
     d.house_id = params[:house]
+    d.save
 
     puts d.to_json
 

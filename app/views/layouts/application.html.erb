@@ -5,6 +5,10 @@
   <%= stylesheet_link_tag :all %>
   <%= csrf_meta_tag %>
 
+  <% if ["professor", "login"].include? @current_controller %>
+  <meta name="viewport" content="initial-scale=1.0, width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0" />
+  <% end %>
+
   <script src="https://www.google.com/jsapi?key=ABQIAAAAhXDZ7JSfaGmxtm15GvrzNBS5gwmUB1QP9sPJVXpf7IyBOQ-12hQTgZYC3EEMwqtJt8fK8tkIFSIzfw" type="text/javascript"> 
   </script> 
   <script type="text/javascript"> 
