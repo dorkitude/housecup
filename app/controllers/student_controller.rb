@@ -1,6 +1,6 @@
 class StudentController < ApplicationController
   def index
-    @houses = House.all
+    @houses = House.find(:all, :order => "id ASC")
   end
 
   def stream
