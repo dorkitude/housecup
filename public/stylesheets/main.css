@@ -1,0 +1,20 @@
+
+#houses {
+  width: 900px;
+}
+
+
+#houses .house {
+  width: 400px;
+  float:left;
+  margin-right:50px;
+}
+
+#houses .house img {
+  float:left;
+}
+
+#houses .house h2 {
+  float:left;
+  font-size: 90px;
+}
