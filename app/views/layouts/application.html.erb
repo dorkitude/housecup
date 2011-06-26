@@ -22,7 +22,7 @@
     
     <div id="flashes">
       <%- flash.each do |key, msg| -%>
-        <div  class="flash" id="<%= key %>">
+        <div  class="flash" class="<%= key %>">
           <p><%= msg %></p>
         </div>
       <%- end -%>
@@ -42,15 +42,14 @@
 
     <% end %>  
 
+
   <%= yield %>
 
 
-  <br />
-  <br />
-  <br />
-  <br />
   <% if @user %>
-    <a href="<%= url_for :controller => :login, :action => :logout %>">logout</a>
+    <div class='logout_link'>
+      <a href="<%= url_for :controller => :login, :action => :logout %>">logout</a>
+    </div>
   <% end %>
 </body>
 </html>
