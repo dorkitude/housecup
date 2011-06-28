@@ -33,11 +33,9 @@
     <% if @current_controller == "student" %>
 
       <% if @current_action == "stream" %>
-        <a href="<%= url_for :action => :index %>">standings</a>
       <% end %>
 
       <% if @current_action == "index" %>
-        <a href="<%= url_for :action => :stream %>">stream</a>
       <% end %>
 
     <% end %>  
