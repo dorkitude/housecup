@@ -18,3 +18,7 @@
   float:left;
   font-size: 90px;
 }
+
+a.nav {
+    padding-bottom: 1em;
+}
