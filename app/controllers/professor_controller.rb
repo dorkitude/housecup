@@ -62,6 +62,8 @@ class ProfessorController < ApplicationController
     puts d.to_json
 
     flash[:success] = "Successfully saved this thang: " + d.to_json
+
+    return redirect_to :action => :new_delta_form
   end
 
 end
