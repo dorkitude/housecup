@@ -23,7 +23,8 @@
       <span><%= delta.house.name %></span>
     </td>
 
-    <td class="points"><span class="num_points"><%= delta.quantity%></span></td>
+  <td class="points">
+  <span class="num_points <% if delta.quantity > 0 %>points_plus<% else %>points_minus<% end %>"><% if delta.quantity > 0 %>+<% else %>-<% end %><%= delta.quantity.abs%></span></td>
     <td class="because"><%= delta.why %></td>
     <td class="when"><%= time_ago_in_words delta.created_at %></td>
   </tr>
