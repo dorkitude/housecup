@@ -46,10 +46,13 @@
                         var text; 
 
                         if ("comments" in data[url]) {
-                            var text= "" + data[url]['comments'] + " comment(s)";
+                            var text= "" + data[url]['comments'] + " comment";
+                            if (data[url['comments'] > 1) {
+                                text += "s";
+                            }
                         }
                         else {
-                            text = "no comments yet. add one?";
+                            text = "0 comments";
                         }
 
                         $('comments_toggle_<%= delta.id %>').set('text', text);
