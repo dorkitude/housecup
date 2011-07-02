@@ -55,6 +55,10 @@ table.stream td.when {
   padding: 0px 20px;
 }
 
+table.stream th.comments,
+table.stream td.comments {
+  padding: 0 20px;
+}
 
 table.stream div.comments_container {
   display: none;

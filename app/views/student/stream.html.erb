@@ -10,6 +10,7 @@
     <th>Points</th>
     <th>Because</th>
     <th>How long ago?</th>
+    <th class="comments">comments</th>
   </tr>
 <% for delta in @deltas %>
 
@@ -47,7 +48,7 @@
 
                         if ("comments" in data[url]) {
                             var text= "" + data[url]['comments'] + " comment";
-                            if (data[url['comments'] > 1) {
+                            if (data[url]['comments'] > 1) {
                                 text += "s";
                             }
                         }
