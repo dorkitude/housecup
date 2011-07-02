@@ -31,6 +31,16 @@ class ApplicationController < ActionController::Base
     return redirect_to :controller => :login, :action => :login_form
   end
 
+
+  # This will set @facebook_app_id and @facebook_app_secret, either
+  # from Heroku config, or to the dev app's values
+  def assign_facebook_stuff
+    @facebook_app_id = ENV['facebook_app_id'] || '204767346236408'
+    @facebook_app_secret = ENV['facebook_app_secret'] || '1c952891190a07f032db2a6869289a06'
+  end
+
+  before_filter :assign_facebook_stuff
+
   
   
 end

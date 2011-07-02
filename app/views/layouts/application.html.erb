@@ -16,6 +16,8 @@
   <meta http-equiv="refresh" content="30">
   <% end %>    
 
+  <meta property="fb:app_id" content="<%= @facebook_app_id %>">
+
   <script src="https://www.google.com/jsapi?key=ABQIAAAAhXDZ7JSfaGmxtm15GvrzNBS5gwmUB1QP9sPJVXpf7IyBOQ-12hQTgZYC3EEMwqtJt8fK8tkIFSIzfw" type="text/javascript"> 
   </script> 
   <script type="text/javascript"> 
@@ -23,10 +25,14 @@
     google.load("mootools", "1.3.0");
     //]]>
   </script> 
+
+  <script type="text/javascript" src='/mootools-request-jsonp.js'> </script>
+  
   
 </head>
 <body>
-    
+    <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+
     <div id="flashes">
       <%- flash.each do |key, msg| -%>
         <div  class="flash" class="<%= key %>">
