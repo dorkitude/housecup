@@ -31,37 +31,10 @@
     <td class="because"><%= delta.why %></td>
     <td class="when"><%= time_ago_in_words delta.created_at %></td>
     <td class="comments">
-        <a id="comments_toggle_<%= delta.id %>" href="#" onclick="$('comments_<%= delta.id %>').setStyle('display', 'block');$('comments_toggle_<%= delta.id %>').setStyle('display', 'none'); return false;">comments</a>
+        <a id="comments_toggle_<%= delta.id %>" href="#" onclick="$('comments_<%= delta.id %>').setStyle('display', 'block');$('comments_toggle_<%= delta.id %>').setStyle('display', 'none'); return false;"><fb:comments-count href="http://housecup.heroku.com/student/stream?delta=<%= delta.id %>" xid="<%= delta.id %>" num_posts="10" publish_feed="false" width="500" simple="true"></fb:comments-count> comment(s)</a>
         <div class="comments_container" id="comments_<%= delta.id %>">
             <fb:comments href="http://housecup.heroku.com/student/stream?delta=<%= delta.id %>" xid="<%= delta.id %>" num_posts="10" publish_feed="false" width="500" simple="true"></fb:comments> 
         </div>
-
-        <script>
-            window.addEvent('load', function() {
-                new Request.JSONP({
-                    url: 'https://graph.facebook.com/?ids=http://housecup.heroku.com/student/stream?delta=<%= delta.id %>',
-                    callbackKey: 'callback',
-                    onSuccess: function(data) {
-                        var url = "http://housecup.heroku.com/student/stream?delta=<%= delta.id %>";
-
-                        var text; 
-
-                        if ("comments" in data[url]) {
-                            var text= "" + data[url]['comments'] + " comment";
-                            if (data[url]['comments'] > 1) {
-                                text += "s";
-                            }
-                        }
-                        else {
-                            text = "0 comments";
-                        }
-
-                        $('comments_toggle_<%= delta.id %>').set('text', text);
-                    }
-                }).send();
-                
-            });
-        </script>
     </td>
   </tr>
 
