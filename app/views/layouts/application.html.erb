@@ -25,7 +25,28 @@
   
 </head>
 <body>
-    <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+    <div id="fb-root"></div>
+
+    <script>
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId  : '<%= @facebook_app_id %>',
+          status : true, // check login status
+          cookie : true, // enable cookies to allow the server to access the session
+          xfbml  : true  // parse XFBML
+        });
+      };
+
+      (function() {
+        var e = document.createElement('script');
+        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+        e.async = true;
+        document.getElementById('fb-root').appendChild(e);
+      }());
+       
+     </script>
+    
 
     <div id="flashes">
       <%- flash.each do |key, msg| -%>
